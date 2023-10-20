@@ -1,4 +1,6 @@
+import 'package:badomens/views/Home.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,19 +30,6 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        leading: Icon(Icons.menu),
-        title: Text('BAD OMENS'),
-        actions: [
-          Icon(Icons.favorite),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Icon(Icons.search),
-          ),
-          Icon(Icons.more_vert),
-        ],
-        backgroundColor: Colors.purple,
-      ),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -86,6 +75,20 @@ class _LoginPageState extends State<LoginPage> {
                             keyboardType: TextInputType.text,
                             obscureText: true,
                           ),
+                          Padding(
+                              padding: EdgeInsets.only(top: 35.00)
+                          ),
+                          MaterialButton(
+                              color: Colors.lightBlueAccent, 
+                              textColor: Colors.white,
+                              child: Icon(Icons.login),
+                              onPressed: ()=>{
+                                Navigator.push(
+                                    context, 
+                                    MaterialPageRoute(builder: (context)=>Home())
+                                )
+                              }
+                          )
                         ],
                       ),
                     ),
